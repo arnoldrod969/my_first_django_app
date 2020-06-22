@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Update task {% endblock %}
+
+{% block content %}
+    <h1>Update task</h1>
+    <form action="{% url 'update_task' tasks.pk %}" method="post" class="form-inline">
+        {% csrf_token %}
+        <label> Task: {{ taskform.title }} &nbsp;&nbsp;
+        Done: &nbsp; {{ taskform.complete }} &nbsp;&nbsp;
+        <input type="submit" value="Update" class="btn btn-primary"> </label>
+    </form>
+
+{% endblock %}

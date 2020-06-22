@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %} Delete a task {% endblock %}
+
+{% block content %}
+    <h1>Delete task</h1>
+    <form action="{% url 'delete_task' tasks.id %}" class="form-group">
+        <p>Are you sure you want to delete <b>{{ tasks.title}} </b> ? </p>
+        <input type="submit" value="Delete" class="btn btn-outline-danger">
+        <a href="{% url 'home' %}" class="btn btn-outline-info">Cancel</a>
+    </form>
+
+{% endblock %}
