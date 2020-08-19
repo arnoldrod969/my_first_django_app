@@ -1,0 +1,31 @@
+{% load static %}
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} {% endblock %}</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+<header>
+    <div class="navbar navbar-dark navbar-expand-lg bg-dark text-light">
+        <div class="navbar-left h1"><a class="navbar-brand " href="{% url 'home' %}"> MyTodoApp </a></div>
+    </div>
+
+</header>
+
+<section class="container mt-5">
+    {% block content %} {% endblock %}
+</section>
+
+<footer class="container-fluid bg-dark text-light pb-2 pt-4 mt-5">
+    <p class="text-center ">Copyright &copy; 2020</p>
+</footer>
+
+</body>
+</html>
